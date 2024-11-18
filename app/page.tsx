@@ -157,6 +157,7 @@ export default function HomePage() {
             onClick={closeModal}
           ></div>
           <div style={styles.modal}>
+          {/* This is dev credit */}
             <h4>Developer Name</h4>
             <p>
               <a href="https://github.com/lifeofdekisugi">Shahir Islam</a> - Lead
