@@ -1,0 +1,4 @@
+After making change run 
+
+npm run build
+firebase deploy
