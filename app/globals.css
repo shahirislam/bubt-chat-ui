@@ -19,3 +19,305 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* style.css */
+
+/* Base Container Styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+  position: relative;
+  background-color: #f5f8fb;
+}
+
+/* Messages Container */
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-bottom: 180px; /* Increased space for input container */
+  height: calc(100vh - 120px); /* Subtract height of input container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 120px; /* Height of input container */
+}
+
+
+/* Response Styles */
+.response-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow-y: auto;
+  margin-top: 50px;
+  max-height: calc(100vh - 200px); /* Adjust based on your input container height */
+}
+
+
+.response-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.response-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px;
+  color: black;
+  margin-bottom: 15px;
+
+}
+
+/* Input Container */
+.input-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  height: auto;
+  min-height: 100px;
+}
+
+
+
+/* Select Group */
+.select-group {
+  display: flex;
+  gap: 10px;
+}
+
+.select-box {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  flex: 1;
+  background-color: white;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-box {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.submit-button {
+  padding: 12px 24px;
+  background: #212121;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Command Message */
+.command-message {
+  position: absolute;
+  top: 20px; /* Adjust position as needed */
+  right: 20px; /* Adjust position as needed */
+  background-color: #212121;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+
+.response-pre {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  color:black;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .messages-container {
+    padding: 10px;
+    padding-bottom: 200px; /* More space for input on mobile */
+    bottom: 160px; /* Adjusted for larger input container on mobile */
+  }
+  
+  .input-container {
+    padding: 10px;
+    min-height: 160px; /* Taller on mobile */
+  }
+  
+  .select-group,
+  .input-group {
+    flex-direction: row;
+  }
+  
+  .select-box,
+  .input-box,
+  .submit-button {
+    padding: 12px; /* Larger touch targets on mobile */
+  }
+  
+  .response-wrapper {
+    margin: 10px;
+    margin-top: 60px;
+  }
+  
+  .response-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+}
+
+/* Mobile view */ 
+@media (max-width: 768px) { 
+  .leftSection, 
+  .rightSection { 
+    display: none; /* Hide left and right sections */ 
+  } 
+  .chatSection { 
+    width: 100%; /* Expand chat section to full width */ 
+    height: 100vh; } 
+  }
+
+  .input-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    width: 90%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    height: auto;
+    min-height: 80px;
+  }
+
+
+/* Desktop view */
+@media (min-width: 769px) {
+  .pageContainer {
+    display: flex;
+  }
+  
+  .leftSection {
+    flex: 1;
+    height: 100vh;
+    overflow: hidden; /* Ensure content doesn't overflow */
+  }
+  
+  .chatSection {
+    flex: 2;
+    height: 100vh;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    max-width: calc(100% - 40px); /* Add some padding */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .rightSection {
+    flex: 1;
+    height: 100vh;
+    overflow: hidden; /* Ensure content doesn't overflow */
+  }
+
+  .input-container {
+    max-width: 600px; /* Ensure input container does not exceed a reasonable width */
+    margin: 0 auto; /* Center the input container */
+    min-height: 100px;
+  }
+}
+
+.pageContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f5f8fb;
+}
+
+.leftSection {
+  flex: 1;
+  height: 100vh;
+  margin-left: 10px;
+  color: black;
+}
+
+.chatSection {
+  flex: 2;
+  height: calc(100vh - 120px); /* Subtract height of input container */
+  overflow-y: hidden;
+  max-width: calc(100% - 40px); /* Add some padding */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.rightSection {
+  flex: 1;
+  height: 100vh;
+  color:black;
+}
+
+.custom-divider {
+  border: none; 
+  height: 1px; /* Set height */
+  background-color: #ccc; /* Set color */
+  margin: 20px 0; /* Add some spacing */
+}
+
+
+/* Additional helper classes */
+.shimmer-element {
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Slide in animations */
+.slide-in-right {
+  animation: slideInRight 0.5s forwards;
+}
+
+/* Keep your existing animation keyframes */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideInRight {
+  0% { right: -100%; }
+  100% { right: 20px; }
+}

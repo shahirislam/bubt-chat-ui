@@ -101,7 +101,6 @@ export default function HomePage() {
 
       <Head>
         <title>BUBT ChatBot</title>
-        <meta name="description" content="This is a chat bot website made bby Shahir Islam a student of BUBT intake 47." />
       </Head>
 
     <div className="pageContainer">
@@ -158,7 +157,7 @@ export default function HomePage() {
       </a>
 
         <a 
-        href="https://wa.me/8801600304131" 
+        href="https://wa.me/message/NA2SQEGWRK7ZI1" 
         target="_blank" 
         rel="noopener noreferrer"
         >
