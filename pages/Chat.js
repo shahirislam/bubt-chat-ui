@@ -74,6 +74,8 @@ function Chat() {
     }
   
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}${endpoint}?section_code=${sectionCode}`;
+    console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
+
 
     try {
       const response = await fetch(apiUrl);
